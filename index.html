@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uğurcan Güneysu - Portfolyo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
 
     <header class="hero">
         <div class="hero-content animate-on-scroll">
@@ -16,10 +21,17 @@
             </div>
             <h1>Uğurcan Güneysu</h1>
             <h2>Bilgisayar Mühendisi</h2>
+            
             <div class="contact-info">
-                <p>📍 Bardakçı Mah. Saygın Sokak No: 1 65100 Tuşba/Van</p>
-                <p>📞 +0 537 042 75 53</p>
+                <a href="tel:+905370427553" class="contact-link"><p>📞 +0 537 042 75 53</p></a>
                 <a href="mailto:ugurcan.guneysu.dev@gmail.com" class="contact-link"><p>✉️ ugurcan.guneysu.dev@gmail.com</p></a>
+                <p>📍 Bardakçı Mah. Saygın Sokak No: 1 65100 Tuşba/Van</p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/guneysuugurcan49" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/kullaniciadin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="Uğurcan Güneysu cv.pdf" download class="download-btn"><i class="fas fa-file-download"></i> CV İndir</a>
             </div>
         </div>
     </header>
@@ -27,20 +39,28 @@
     <main class="container">
         <section class="card about animate-on-scroll">
             <h3>Hakkımda</h3>
-            <p>Bilgisayar Mühendisiyim ve yazılım geliştirme, görüntü işleme, gömülü sistemler ve mobil uygulama geliştirme alanlarında çalışıyorum. Python, C#, Flutter, React Native ve JavaScript teknolojileriyle projeler geliştirdim. Python'da YOLO tabanlı nesne tanıma, gerçek zamanlı görüntü işleme ve veri analizi üzerine deneyim sahibiyim. Raspberry Pi ile donanım-yazılım entegrasyonu ve çok platformlu mobil uygulama geliştirme konularında çalıştım. Yeni teknolojilere hızlı adapte olan, analitik düşünme becerisine sahip bir mühendisim.</p>
+            <p>Bilgisayar Mühendisliği öğrencisiyim ve yazılım geliştirme, görüntü işleme, gömülü sistemler ve mobil uygulama geliştirme alanlarında çalışıyorum. Python, C#, Flutter, React Native ve JavaScript teknolojileriyle projeler geliştirdim. Analitik düşünme becerisine sahip bir mühendisim.</p>
         </section>
 
         <div class="grid-layout">
-            <section class="card skills animate-on-scroll">
-                <h3>Beceriler</h3>
-                <ul>
-                    <li>Ekip Çalışması</li>
-                    <li>Kriz Yönetimi</li>
-                    <li>Liderlik</li>
-                    <li>Analitik Düşünme</li>
-                    <li>Hızlı Kavrama</li>
-                    <li>Problem Çözme</li>
-                </ul>
+            <section class="card skills-section animate-on-scroll">
+                <h3>Teknik Yetkinlikler</h3>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>Python & YOLO</span><span>90%</span></div>
+                    <div class="progress-line" data-progress="90%"><span></span></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>C# & ASP.NET</span><span>85%</span></div>
+                    <div class="progress-line" data-progress="85%"><span></span></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>Flutter / React Native</span><span>80%</span></div>
+                    <div class="progress-line" data-progress="80%"><span></span></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>CUDA (Parallel Programming)</span><span>75%</span></div>
+                    <div class="progress-line" data-progress="75%"><span></span></div>
+                </div>
             </section>
 
             <section class="card education animate-on-scroll">
@@ -59,56 +79,66 @@
                 <li data-tooltip="ASP.NET ve C# ile arka ucu kodlanmış, MySQL veritabanı destekli kapsamlı e-ticaret altyapısı.">E-Ticaret Yönetim Sistemi / ASP.NET C# MYSQL</li>
                 <li data-tooltip="Python ve YOLO algoritması kullanılarak kamera görüntüsü üzerinden anlık kalabalık yoğunluğunu tespit eden sistem.">Gerçek Zamanlı Kalabalık Takip Sistemi / YOLO Phyton</li>
                 <li data-tooltip="Densenet121 derin öğrenme modeli ile kişilerin maske takıp takmadığını tespit eden görüntü işleme projesi.">Maskeli Yüz Tanıma Sistemi / Densenet121 Phyton</li>
-                <li data-tooltip="Metin ön işleme ve tokenizasyon adımlarının ardından, Naive Bayes algoritması ile Twitter verileri üzerinden duygu analizi yapan NLP modeli.">Tweet'lerden Duygu Analizi / Naive Bayes Phyton</li>
-                <li data-tooltip="CUDA platformu kullanılarak Rastrigin fonksiyonunun GPU üzerinde paralel programlama ile hızlandırılmış çözümü.">Rastrigin Fonksiyonu İle Paralel Programlama / CUDA</li>
-                <li data-tooltip="Yapay Arı Kolonisi (ABC) algoritmasının CUDA ile paralel hale getirilerek optimizasyon problemlerinde kullanılması.">ABC Algoritması İle Optimizasyon Problemi / CUDA</li>
-                <li data-tooltip="Arduino IDE ile programlanmış, sensörler yardımıyla çevresindeki engelleri algılayıp yön değiştiren otonom robot.">Engelden Kaçan Robot / Arduino IDE</li>
-                <li data-tooltip="React Native kullanılarak geliştirilmiş, kullanıcıyla etkileşime giren yapay zeka destekli çok platformlu mobil asistan.">AI Asistan / React Native</li>
-                <li data-tooltip="Raspberry Pi üzerindeki yüz tanıma modülü ile kişiyi algılayıp, Firebase ve Flutter (FCM) üzerinden mobil bildirim gönderen IoT sistemi.">Yüz Tanıma İle İlaç Hatırlatma Sistemi / Raspberry Pi Phyton Firebase FMC Flutter</li>
+                <li data-tooltip="Metin ön işleme ve tokenizasyon adımlarının ardından Naive Bayes algoritması ile tweet duygu analizi.">Tweet'lerden Duygu Analizi / Naive Bayes Phyton</li>
             </ul>
         </section>
     </main>
 
     <div class="image-modal" id="imageModal">
-        <img src="assets/profile.jpg" alt="Uğurcan Güneysu - Büyütülmüş Fotoğraf">
+        <img src="profile.jpg" alt="Uğurcan Güneysu">
     </div>
 
     <script>
-        // 1. Kaydırma (Scroll) Animasyonları
+        // Kaydırma Animasyonları
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
+                    // Yetenek barlarını doldur
+                    if (entry.target.classList.contains('skills-section')) {
+                        const lines = entry.target.querySelectorAll('.progress-line span');
+                        lines.forEach(line => {
+                            line.style.width = line.parentElement.getAttribute('data-progress');
+                        });
+                    }
                 }
             });
         }, { threshold: 0.1 });
 
-        const hiddenElements = document.querySelectorAll('.animate-on-scroll');
-        hiddenElements.forEach((el) => observer.observe(el));
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
 
-        // 2. Proje Tooltip Mantığı
-        const projectItems = document.querySelectorAll('.project-list li');
-        projectItems.forEach(item => {
-            item.addEventListener('click', () => {
-                projectItems.forEach(el => {
-                    if(el !== item) el.classList.remove('active');
-                });
-                item.classList.toggle('active');
-            });
+        // Karanlık Mod Mantığı
+        const themeToggle = document.getElementById('themeToggle');
+        const icon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
         });
 
-        // 3. YENİ: Profil Fotoğrafı Modal Mantığı
+        // Sayfa yüklendiğinde eski tercihi hatırla
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        // Profil Fotoğrafı Modal
         const profileImg = document.getElementById('profileImg');
         const imageModal = document.getElementById('imageModal');
+        profileImg.addEventListener('click', () => imageModal.classList.add('show'));
+        imageModal.addEventListener('click', () => imageModal.classList.remove('show'));
 
-        // Fotoğrafa tıklayınca aç
-        profileImg.addEventListener('click', () => {
-            imageModal.classList.add('show');
-        });
-
-        // Siyah arka plana veya büyük fotoğrafa tıklayınca kapat
-        imageModal.addEventListener('click', () => {
-            imageModal.classList.remove('show');
+        // Proje Tooltip (Mobil Dokunmatik)
+        document.querySelectorAll('.project-list li').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
         });
     </script>
 </body>
