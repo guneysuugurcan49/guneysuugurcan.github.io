@@ -1,0 +1,350 @@
+/* --- Temel Ayarlar ve Akıcı Kaydırma --- */
+:root {
+    --bg-color: #f4f7f9; /* Göz yormayan, çok açık ve soft mavi-beyaz */
+    --text-color: #64748b; /* Yumuşak orta gri */
+    --primary-color: #1e293b; /* Başlıklar için tok ama yumuşak antrasit */
+    --accent-color: #8b5cf6; /* Tatlı bir pastel mor */
+    --accent-light: #ede9fe; /* Beceriler kısmı için çok açık pastel mor */
+    --accent-gradient: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%); /* Mor'dan Mavi'ye modern soft geçiş */
+    --card-bg: #ffffff;
+    --border-color: #f1f5f9;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8; /* Satır aralığını biraz açtık, daha ferah durması için */
+    overflow-x: hidden;
+}
+
+/* --- Üst Kısım (Hero) --- */
+.hero {
+    background: var(--accent-gradient);
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+    position: relative;
+    border-bottom-left-radius: 30px; /* Alt köşeleri yumuşattık */
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 10px 30px rgba(96, 165, 250, 0.2); /* Soft renkli gölge */
+}
+
+/* Profil Fotoğrafı Süzülme Animasyonu */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+.profile-img-container {
+    display: inline-block;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 10;
+}
+
+.profile-img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    animation: float 4s ease-in-out infinite;
+    cursor: pointer;
+    transition: border-color 0.4s ease, transform 0.4s ease;
+}
+
+.profile-img:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.03); 
+}
+
+/* --- Açılır Pencere (Modal) Tasarımı --- */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 41, 59, 0.85); /* Daha soft bir karartma */
+    backdrop-filter: blur(12px); /* Cam efekti artırıldı */
+    z-index: 9999; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    cursor: zoom-out;
+}
+
+.image-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-modal img {
+    max-width: 85vw;
+    max-height: 85vh;
+    border-radius: 20px; /* Daha yuvarlak köşeler */
+    border: 5px solid white;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    transform: scale(0.8); 
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.image-modal.show img {
+    transform: scale(1); 
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.hero h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 28px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    z-index: 5;
+    position: relative;
+}
+
+.contact-info p {
+    font-size: 0.95rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.15); /* Soft cam görünümü (Glassmorphism) */
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-info p:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* --- Ana İçerik ve Kartlar --- */
+.container {
+    max-width: 900px;
+    margin: -30px auto 60px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 24px; /* Çok daha soft ve modern köşeler */
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05); /* Yayılan çok hafif gölge */
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.5);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.card h3::after {
+    content: "";
+    flex: 1;
+    height: 3px;
+    background: var(--border-color);
+    margin-left: 15px;
+    border-radius: 3px;
+}
+
+/* --- Izgara Sistemi --- */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* --- Listeler ve Etiketler --- */
+ul {
+    list-style-type: none;
+}
+
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Soft UI Etiket Tasarımı */
+.skills ul li {
+    background-color: var(--accent-light);
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.skills ul li:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.education ul li {
+    border-left: 3px solid var(--accent-light);
+    padding-left: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.education ul li::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 6px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+/* --- Tooltip (Bilgi Kutucuğu) Tasarımı ve Proje Listesi --- */
+.project-list li {
+    position: relative; 
+    padding: 18px 15px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.project-list li:last-child {
+    border-bottom: none;
+}
+
+.project-list li:hover, .project-list li.active {
+    padding-left: 25px;
+    color: var(--accent-color);
+    background-color: var(--bg-color); 
+}
+
+/* Tooltip (Bilgi Kutucuğu) */
+.project-list li::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    background: rgba(30, 41, 59, 0.95); /* Koyu soft cam efekti */
+    backdrop-filter: blur(10px);
+    color: #f8fafc;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.6;
+    white-space: normal;
+    width: 300px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    pointer-events: none; 
+}
+
+.project-list li::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    border-width: 8px;
+    border-style: solid;
+    border-color: rgba(30, 41, 59, 0.95) transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+}
+
+.project-list li:hover::after,
+.project-list li:hover::before,
+.project-list li.active::after,
+.project-list li.active::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-12px);
+}
+
+/* --- Scroll Görünürlük Animasyonları --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Mobil Uyumluluk --- */
+@media (max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+    .hero {
+        padding: 70px 15px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .container {
+        margin-top: -20px;
+    }
+    .card {
+        padding: 25px;
+    }
+}
