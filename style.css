@@ -135,3 +135,14 @@ body {
 
 .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 @media (max-width: 768px) { .grid-layout { grid-template-columns: 1fr; } .hero { padding: 70px 20px; } }
+/* --- Karanlık Mod Tooltip (Bilgi Kutucuğu) Düzeltmesi --- */
+body.dark-mode .project-list li::after {
+    background: #334155; /* Koyu slate/gri arka plan */
+    color: #f8fafc; /* Beyaz yazı */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Gölgeleri biraz belirginleştirdik */
+}
+
+body.dark-mode .project-list li::before {
+    /* Ok işaretinin rengini de arka planla aynı yapıyoruz */
+    border-color: #334155 transparent transparent transparent;
+}
